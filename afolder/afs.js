@@ -4,7 +4,6 @@ var url = require('url'); // // 웹구현 모듈
 var path = require('path');
 var Url = require('url-parse');
 
-
 module.exports = {
   HTML:function(){
     return `<!doctype html>
@@ -16,7 +15,6 @@ module.exports = {
       <link rel="stylesheet" type=="text/css" href="style.css?ver=1">
     </head>
     <body>
-    <a href="/" > <img src ="http://blogattach.naver.net/a83db40514232294bc593c0c32d7aed47128d7e3/20190722_70_blogfile/sosoie_1563763852799_nyssx3_jpg/145064.jpg"> </a>
 <link rel="stylesheet" type=="text/css" href="style.css?ver=1">
     <style>
     <link rel="stylesheet" type=="text/css" href="style.css?ver=1">
@@ -52,7 +50,7 @@ module.exports = {
     </style>
 
     <ul class="navbar">
-
+<a href="/" > <img src ="https://imgur.com/download/uEtxOPp/"> </a>
       <li><a href="/">홈</a></li>
       <li><a href="/afolder">메뉴A</a></li>
       <li><a href="/bfolder">메뉴B</a></li>
@@ -70,6 +68,11 @@ module.exports = {
 <br>
 <br>
 <br>
+<br>
+<br>
+<img src = " https://postfiles.pstatic.net/MjAxODA5MjNfMTky/MDAxNTM3NjY5NzY1NjAw.2NTvM2OvrtfG99nEaTsNBRUaifHwoieXIelZp_cEsrIg.ZjBwlDMFiRTGEtkHLESF1Xxi8KAO1lU5R1jIOlTQar4g.PNG.nhj7/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2018-09-23_%EC%98%A4%EC%A0%84_11.29.03.png?type=w9
+66" width="130" height="100" alt="Upbit">
+UPBIT API 넣어보기.
 
 </body>
 </html>

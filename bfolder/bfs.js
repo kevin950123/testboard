@@ -18,14 +18,7 @@ module.exports = {
       <link rel="stylesheet" type=="text/css" href="style.css?ver=1">
     </head>
     <body>
-    <a href="/" > <img src ="http://blogattach.naver.net/a83db40514232294bc593c0c32d7aed47128d7e3/20190722_70_blogfile/sosoie_1563763852799_nyssx3_jpg/145064.jpg"> </a>
-
 <link rel="stylesheet" type=="text/css" href="style.css?ver=1">
-
-
-
-
-
     <style>
     <link rel="stylesheet" type=="text/css" href="style.css?ver=1">
     table {
@@ -60,6 +53,7 @@ module.exports = {
     </style>
 
     <ul class="navbar">
+    <a href="/" > <img src ="https://imgur.com/download/uEtxOPp/"> </a>
       <li><a href="/">홈</a></li>
       <li><a href="/afolder">메뉴A</a></li>
       <li><a href="/bfolder">메뉴B</a></li>
