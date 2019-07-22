@@ -18,6 +18,7 @@ module.exports = {
       <link rel="stylesheet" type=="text/css" href="style.css?ver=1">
     </head>
     <body>
+    <a href="/" > <img src ="http://blogattach.naver.net/a83db40514232294bc593c0c32d7aed47128d7e3/20190722_70_blogfile/sosoie_1563763852799_nyssx3_jpg/145064.jpg"> </a>
 
 <link rel="stylesheet" type=="text/css" href="style.css?ver=1">
 
@@ -59,7 +60,6 @@ module.exports = {
     </style>
 
     <ul class="navbar">
-<h1 style="text-align:center" background: white;>  <a href="/" > <img src ="1.png"> </a> </h1>
       <li><a href="/">홈</a></li>
       <li><a href="/afolder">메뉴A</a></li>
       <li><a href="/bfolder">메뉴B</a></li>
@@ -71,25 +71,12 @@ module.exports = {
 </table>
 <table>
 <body>
-<img src="_1.png"> </img>
-<img src="_/1.png"> </img>
-<img src="afolder/1.png"> </img>
-<img src="_afolder"> </img>
-<img src="_1.png"> </img>
-<img src="/afolder/1.png?ver=1"></img>
-<img src="./afolder/1.png?ver=1">
-<img src="abc/afolder/1.png?ver=1">
-<img src="c:/abc/afolder/1.png?ver=1">
-<img src="C:/Users/admin/Desktop/abc/afolder/1.png?ver=1"
-<img src= "imgs/1.png?ver=1">
-<img src="1.png?ver=1" />
-<img src="./1.png?ver=1" />
 <br>
 <br>
 <br>
 <br>
 <br>
-<img src ="https://www.everdevel.com/material/images/HTML/asimo.png">
+
 </body>
 </html>
     `;

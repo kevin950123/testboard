@@ -9,6 +9,7 @@ var path = require('path'); // 경로 모듈
 var sanitizeHtml = require('sanitize-html'); // HTML 잘못된 구문 정리
 var mysql = require('mysql');
 var server = http.createServer();
+var Url = require('url-parse');
 
 
 
@@ -87,7 +88,7 @@ var app = http.createServer(function(request,response){
             <td><p>내용 : ${description} </p></td>
             </table>
             </thead>
-            <a href="/create"><br>게시글 작성하기</a>
+            <a href="/create">게시글 작성하기</a>
                 <a href="/update?id=${queryData.id}">수정하기</a>
                 <form action="delete_process" method="post">
                   <input type="hidden" name="id" value="${queryData.id}">
@@ -122,8 +123,7 @@ var app = http.createServer(function(request,response){
               </p>
 
             </form>
-            `,
-            ``
+            `
           );
           response.writeHead(200);
           response.end(html);
