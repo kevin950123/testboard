@@ -1,13 +1,34 @@
-import request from 'request'
-const my_coin = "ALL";
+const express = require("express");
+const bodyParser = require("body-parser");
 
-request({
-  method:'GET',
-  uri:'https://api.bithumb.com/public/ticker'+my_coin
-},(err, res, result)=>{
-  if(err){
-    console.log(err);
-    return;
+const server = express();
+
+
+const users = (bodyParser.json());
+
+const users = [
+  {
+    id: "aosefofe",
+    name: "awosef",
+    email: "awoefk@naver.com"
+  },
+  {
+    id: "awpokge",
+    name: "awplef",
+    email: "awroejh@naver.com"
   }
-  console.log(result);
-})
+];
+
+
+server.get("/api/user", (req, res) => {
+  res.json(users);
+});
+
+server.post('/api/user", (req,res)=>{
+  console.log(req.body);
+  res.json(users);
+});
+
+server.listen(3000, () => {
+  console.log("서버시작");
+});
