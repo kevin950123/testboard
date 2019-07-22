@@ -1,16 +1,13 @@
-var http = require('http');
-var fs = require('fs');
-var app = http.createServer(function(request,response){
-    var url = request.url;
-    if(request.url == '/'){
-      url = '/index.html';
+import request from 'request'
+const my_coin = "ALL";
 
-    }
-    if(request.url == '/favicon.ico'){
-      return response.writeHead(404);
-    }
-    response.writeHead(200);
-    response.end(fs.readFileSync(__dirname + url));
-
-});
-app.listen(3000);
+request({
+  method:'GET',
+  uri:'https://api.bithumb.com/public/ticker'+my_coin
+},(err, res, result)=>{
+  if(err){
+    console.log(err);
+    return;
+  }
+  console.log(result);
+})

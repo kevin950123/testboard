@@ -57,6 +57,7 @@ module.exports = {
       <li><a href="/">홈</a></li>
       <li><a href="/afolder">메뉴A</a></li>
       <li><a href="/bfolder">메뉴B</a></li>
+      <li><a href="/cfolder">API메뉴</a></li>
 
     </ul>
 
@@ -70,6 +71,7 @@ module.exports = {
 <br>
 <br>
 <br>
+B폴더입니다.
 
 </body>
 </html>

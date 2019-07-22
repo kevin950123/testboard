@@ -54,6 +54,7 @@ module.exports = {
       <li><a href="/">홈</a></li>
       <li><a href="/afolder">메뉴A</a></li>
       <li><a href="/bfolder">메뉴B</a></li>
+            <li><a href="/cfolder">API메뉴</a></li>
 
     </ul>
 
@@ -70,9 +71,8 @@ module.exports = {
 <br>
 <br>
 <br>
-<img src = " https://postfiles.pstatic.net/MjAxODA5MjNfMTky/MDAxNTM3NjY5NzY1NjAw.2NTvM2OvrtfG99nEaTsNBRUaifHwoieXIelZp_cEsrIg.ZjBwlDMFiRTGEtkHLESF1Xxi8KAO1lU5R1jIOlTQar4g.PNG.nhj7/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2018-09-23_%EC%98%A4%EC%A0%84_11.29.03.png?type=w9
-66" width="130" height="100" alt="Upbit">
-UPBIT API 넣어보기.
+<br>
+A폴더입니다.
 
 </body>
 </html>

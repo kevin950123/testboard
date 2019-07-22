@@ -4,16 +4,17 @@ var url = require('url'); // // 웹구현 모듈
 var qs = require('querystring'); // 쿼리 모듈
 var template = require('./lib/template.js'); // index.html 대체
 var afolder = require('./afolder/afs.js'); // 네비게이션바 2번째 메뉴
-var bfolder = require('./bfolder/bfs.js'); // 네비게이션바 3번째 메뉴
+var bfolder = require('./bfolder/bfs.js');
+var cfolder = require('./cfolder/cfs.js'); // 네비게이션바 3번째 메뉴
 var path = require('path'); // 경로 모듈
 var sanitizeHtml = require('sanitize-html'); // HTML 잘못된 구문 정리
 var mysql = require('mysql');
 var server = http.createServer();
 var Url = require('url-parse');
+var express = require('express');
+var app = express();
 
 
-
-/////////////////////////////////////////////////////////////////
 var db = mysql.createConnection({
   host:'localhost',
   user:'root',
@@ -21,9 +22,8 @@ var db = mysql.createConnection({
   database:'opentutorials'
 });
 db.connect();
-/////////////////////쿼리DB 커넥트///////////////////////////
+/////////////////////////////////////////////////////////////////
 
-//여기부터
 
 
 //여기까지 마음대로 수정가능
@@ -143,17 +143,13 @@ var html = afolder.HTML(`
   `);
   response.end(html);
 
+} else if(pathname === '/cfolder'){
+  var html = cfolder.HTML(`
+    `);
+    response.end(html);
 
-
-
-//위에건 웹주소이름,아래건 웹주소이름+엑세스
 
 } else if(pathname === '/afolder_process'){
-
-
-
-
-
 
       //여기까지
 
