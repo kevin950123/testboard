@@ -6,9 +6,11 @@
   "directories": {
     "lib": "lib"
   },
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/web-n/Nodejs.git"
@@ -18,16 +20,30 @@
   "bugs": {
     "url": "https://github.com/web-n/Nodejs/issues"
   },
+
+  "upbitAPI": {
+  "access_key": "VHLJxxxiVxhHQAfaCDxSZ9AaToDzHMS6aPB3kBla",
+  "secret_key": "AeYWR4VkeeD40DrkaVqWtdmJcgDoHvZeMF98CvJP",
+  "secretOrPrivateKey": "AeYWR4VkeeD40DrkaVqWtdmJcgDoHvZeMF98CvJP",
+  "nonce": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3Nfa2V5IjoiVkhMSnh4eGlWeGhIUUFmYUNEeFNaOUFhVG9EekhNUzZhUEIza0JsYSIsIm5vbmNlIjoiZDc1YzE1ODgtNmY3NC00MDY1LWI0ZGMtNGU4MTk5NDNmYjIwIiwiaWF0IjoxNTYzODQxMDMwfQ.XH78uMQ55iDPiujIaGUXTWnCDUlO7F3XZW0LlHWiG6Q",
+  "query_hash": "query string",
+  "query_hash_alg": "SHA512"
+
+},
+
   "homepage": "https://github.com/web-n/Nodejs#readme",
+
   "dependencies": {
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "const": "^1.0.0",
     "crypto": "^1.0.1",
     "curl": "^0.1.4",
     "ejs": "^2.6.2",
+    "export": "^0.1.337",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mysql": "^2.17.1",
@@ -40,8 +56,14 @@
     "url-parse": "^1.4.7",
     "xmlhttprequest": "^1.8.0"
   },
+
+
   "devDependencies": {
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0"
   }
+
+
+
+
 }

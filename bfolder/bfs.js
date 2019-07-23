@@ -4,79 +4,82 @@ var url = require('url'); // // 웹구현 모듈
 var path = require('path');
 
 
+const jwt = require("jsonwebtoken");
+const uuidv4 = require("uuid/v4");
 
-
-
-module.exports = {
-  HTML:function(){
-    return `<!doctype html>
-    <html>
-    <head>
-      <title>WEB1 - </title>
-      <meta charset="utf-8">
-
-      <link rel="stylesheet" type=="text/css" href="style.css?ver=1">
-    </head>
-    <body>
-<link rel="stylesheet" type=="text/css" href="style.css?ver=1">
-    <style>
-    <link rel="stylesheet" type=="text/css" href="style.css?ver=1">
-    table {
-        width: 100%;
-      }
-      table, th, td {
-        border: 1px solid #bcbcbc;
-      }
-    html {
-      height: 150%;
-    }
-    body { margin: 0; }
-    .navbar {
-      background: black;
-      margin: 0; padding: 0;
-      list-style: none;
-      position: fixed;
-      width: 100%;
-    }
-    .navbar>li {
-      display: inline-block;
-    }
-    .navbar>li>a {
-      display: block;
-      text-decoration: none;
-      padding: 10px 20px;
-      color: white;
-    }
-    .navbar>li>a:hover {
-      background: gray;
-    }
-    </style>
-
-    <ul class="navbar">
-    <a href="/" > <img src ="https://imgur.com/download/uEtxOPp/"> </a>
-      <li><a href="/">홈</a></li>
-      <li><a href="/afolder">메뉴A</a></li>
-      <li><a href="/bfolder">메뉴B</a></li>
-      <li><a href="/cfolder">API메뉴</a></li>
-
-    </ul>
-
-<table>
-
-</table>
-<table>
-<body>
-<br>
-<br>
-<br>
-<br>
-<br>
-B폴더입니다.
-
-</body>
-</html>
-    `;
-
-
-    }
+const payload = {
+  access_key: "VHLJxxxiVxhHQAfaCDxSZ9AaToDzHMS6aPB3kBla",
+  nonce: uuidv4(),
 };
+
+const jwtToken = jwt.sign(payload, "AeYWR4VkeeD40DrkaVqWtdmJcgDoHvZeMF98CvJP");
+const authorizationToken = `Bearer ${jwtToken}`;
+
+  const request = require('request')
+  const sign = require('jsonwebtoken').sign
+
+  const access_key = process.env.UPBIT_OPEN_API_ACCESS_KEY
+  const secret_key = process.env.UPBIT_OPEN_API_SECRET_KEY
+  const server_url = process.env.UPBIT_OPEN_API_SERVER_URL
+
+  const token = sign(payload, "AeYWR4VkeeD40DrkaVqWtdmJcgDoHvZeMF98CvJP")
+
+  const options = {
+      method: "GET",
+      url: server_url + "/v1/accounts",
+      headers: {Authorization: `Bearer ${token}`},
+  }
+
+
+    module.exports = {
+      HTML:function(hello){
+        return `
+
+        <!doctype html>
+        <html>
+        <head>
+          <title>WEB1 - </title>
+          <meta charset="utf-8">
+</head>
+
+${jwtToken};
+<br>
+${token};
+
+</html>
+
+
+           `
+      }
+    }
+
+
+/*
+  request(options, (error, response, body) => {
+      if (error) throw new Error(error)
+      console.log(body)
+  })
+*/
+
+
+/*
+  const jwt = require("jsonwebtoken");
+  const uuidv4 = require("uuid/v4");
+  const crypto = require('crypto');
+  const querystring = require("querystring");
+
+  const query = querystring.queryEncode({파라미터});
+
+  const hash = crypto.createHash('sha512');
+  const queryHash = hash.update(query, 'utf-8').digest('hex');
+
+  const payload = {
+    access_key: "VHLJxxxiVxhHQAfaCDxSZ9AaToDzHMS6aPB3kBla",
+    nonce: uuidv4(),
+    query_hash: queryHash,
+    query_hash_alg: 'SHA512',
+  };
+
+  const jwtToken = jwt.sign(payload, "AeYWR4VkeeD40DrkaVqWtdmJcgDoHvZeMF98CvJP");
+  const authorizationToken = `Bearer ${jwtToken}`;
+  */
