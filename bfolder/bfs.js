@@ -7,71 +7,90 @@ const http = require('http'); // 웹구현 모듈 // 파일 시스템 모듈
 const url = require('url'); // // 웹구현 모듈
 const qs = require('querystring');
 const path = require('path');
-
-
 const payload = {
 access_key: "VHLJxxxiVxhHQAfaCDxSZ9AaToDzHMS6aPB3kBla",
 nonce: uuidv4(),
 };
-
 const jwtToken = jwt.sign(payload, "AeYWR4VkeeD40DrkaVqWtdmJcgDoHvZeMF98CvJP");
-//const authorizationToken = `Bearer ${jwtToken}`;
+const authorizationToken = `Bearer ${jwtToken}`;
+const access_key = process.env.UPBIT_OPEN_API_ACCESS_KEY;
+const secret_key = process.env.UPBIT_OPEN_API_SECRET_KEY;
+const server_url = process.env.UPBIT_OPEN_API_SERVER_URL;
+const token = sign(payload, "AeYWR4VkeeD40DrkaVqWtdmJcgDoHvZeMF98CvJP")
+const options = {
+    method: "GET",
+    url: "https://api.upbit.com/v1/accounts",
+    headers: {Authorization: `Bearer ${token}`},
+}
+
+//url: server_url + "/v1/accounts",
 
 
-
-  const access_key = process.env.UPBIT_OPEN_API_ACCESS_KEY;
-  const secret_key = process.env.UPBIT_OPEN_API_SECRET_KEY;
-  const server_url = process.env.UPBIT_OPEN_API_SERVER_URL;
-
-  const token = sign(payload, "AeYWR4VkeeD40DrkaVqWtdmJcgDoHvZeMF98CvJP")
-
-
-  const options = {
-      method: "GET",
-      url: "https://api.upbit.com/v1/accounts",
-      headers: {Authorization: `Bearer ${token}`},
-  }
-
-
-  request(options, (error, response, body) => {
+/*
+let upbitall = request(options, (error, response, body) => {
+    if (error) throw new Error(error)
+    console.log(body)
+})
+const upbitallq = request(options, (error, response, body) => {
     if (error) throw new Error(error)
     console.log(body)
 })
 
+request(options, (error, response, body) => {
+    if (error) throw new Error(error)
+    console.log(body)
+})
+*/
 
 
     module.exports = {
-      HTML:function(hello){
+      HTML:function(request, body){
         return `
-
         <!doctype html>
         <html>
+        <meta charset="utf-8">
         <head>
-          <title>WEB1 - </title>
-<meta charset="utf-8">
+        <meta charset="utf-8">
+          <title>WEB1 - API부르기</title>
 
-<script src = "/bfolder/upcount.js"></script>
+
+<script>
+
+          request(options, (error, response, body) => {
+            if (error) throw new Error(error)
+            console.log(body);
+        })
+
+</script>
+
+<script src = "upbitapi/unit.js">
+</script>
+
 </head>
 
 <body>
-<input type ="button" value="btn" id="btn />
-<script type="text/javascript">
+
 <p><br>
 
-리퀘스트 바디 :
-${request.body};
+
+
+
 
 <br>
-리퀘스트 옵션스
-${request.options};
-
 <br>
-리퀘스트 리스폰스
-${request.response};
-
 <br>
-리퀘스트
-${request};
+<br>
+<br>
+<br>
+<br>
+
+
+나온값 :
+
+
+
+
+
 
 </p>
 

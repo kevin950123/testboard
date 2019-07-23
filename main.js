@@ -5,7 +5,8 @@ var qs = require('querystring'); // 쿼리 모듈
 var template = require('./lib/template.js'); // index.html 대체
 var afolder = require('./afolder/afs.js'); // 네비게이션바 2번째 메뉴
 var bfolder = require('./bfolder/bfs.js');
-var cfolder = require('./cfolder/cfs.js'); // 네비게이션바 3번째 메뉴
+var cfolder = require('./cfolder/cfs.js');
+var apiup = require('./upbitapi/unit.js'); // 네비게이션바 3번째 메뉴
 var path = require('path'); // 경로 모듈
 var sanitizeHtml = require('sanitize-html'); // HTML 잘못된 구문 정리
 var mysql = require('mysql');
@@ -13,6 +14,34 @@ var server = http.createServer();
 var Url = require('url-parse');
 var express = require('express');
 var app = express();
+
+//API 모듈
+const request = require('request');
+const jwt = require("jsonwebtoken");
+const sign = require('jsonwebtoken').sign
+const uuidv4 = require("uuid/v4");
+const payload = {
+access_key: "VHLJxxxiVxhHQAfaCDxSZ9AaToDzHMS6aPB3kBla",
+nonce: uuidv4(),
+};
+const jwtToken = jwt.sign(payload, "AeYWR4VkeeD40DrkaVqWtdmJcgDoHvZeMF98CvJP");
+const authorizationToken = `Bearer ${jwtToken}`;
+const access_key = process.env.UPBIT_OPEN_API_ACCESS_KEY;
+const secret_key = process.env.UPBIT_OPEN_API_SECRET_KEY;
+const server_url = process.env.UPBIT_OPEN_API_SERVER_URL;
+
+const token = sign(payload, "AeYWR4VkeeD40DrkaVqWtdmJcgDoHvZeMF98CvJP")
+const options = {
+    method: "GET",
+    url: "https://api.upbit.com/v1/accounts",
+    headers: {Authorization: `Bearer ${token}`},
+}
+
+
+const upbitall = request(options, (error, response, body) => {
+    if (error) throw new Error(error)
+    console.log(body)
+})
 
 
 
@@ -136,6 +165,11 @@ var app = http.createServer(function(request,response){
 
       //여기부터
     } else if(pathname === '/bfolder'){
+
+
+
+
+
       var html = bfolder.HTML(`
         `);
         response.end(html);
@@ -151,6 +185,15 @@ var html = afolder.HTML(`
   var html = cfolder.HTML(`
     `);
     response.end(html);
+
+
+
+/*
+  } else if(pathname === '/apiup.js'){
+        var html = upbitapi.HTML(`
+          `);
+          response.end(html);
+*/
 
 
 } else if(pathname === '/afolder_process'){
