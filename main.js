@@ -210,7 +210,6 @@ var html = afolder.HTML(`
             response.writeHead(200);
             response.end(html);
           });
-
         });
       });
     } else if(pathname === '/update_process'){

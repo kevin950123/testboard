@@ -11,7 +11,7 @@ const authorizationToken = `Bearer ${jwtToken}`;
 
 
 //Binance API
-
+/*
 const binance = require('node-binance-api')().options({
   APIKEY: 'SQbrHWUzkqNgi2qU9T8jEt1xk5dckqri5lAYE2TzAK6IQnmwix4HCP2wtrWVNPFM',
   APISECRET: '1sdMpKokijlnG0RPD6gvySiY7NSsV137KGf6xDUe6hWTSZY4lLp4D9iLuWECKdvp',
@@ -25,7 +25,7 @@ binance.prices((error, ticker) => {
   console.log("prices()", ticker);
   console.log("Price of BTC: ", ticker.BTCUSDT);
 });
-
+*/
 
 //const BTCUSDTPRICE = binance.price((error, ticker) => {
 //  console.log("prices()", ticker.BTCUSDT);
