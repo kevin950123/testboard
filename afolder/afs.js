@@ -72,7 +72,7 @@ module.exports = {
 <br>
 <br>
 <br>
-구글 token창입니다.
+구글 검색창입니다.
 <form method=get action="http://www.google.co.kr/search" target="_blank" >   <table bgcolor="#FFFFFF">     <tr>       <td>           <input type=text name=q size=25 maxlength=255 value="" /> <!-- 구글 token 입력 창 -->           <input type=submit name=btnG value="Google token" /> <!-- token 버튼 -->       </td>     </tr>   </table> </form>
 
 
