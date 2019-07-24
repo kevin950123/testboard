@@ -1,3 +1,4 @@
+/*
 const jwt = require("jsonwebtoken");
 const uuidv4 = require("uuid/v4");
 
@@ -8,8 +9,7 @@ const payload = {
 
 const jwtToken = jwt.sign(payload, "AeYWR4VkeeD40DrkaVqWtdmJcgDoHvZeMF98CvJP");
 const authorizationToken = `Bearer ${jwtToken}`;
-
-
+*/
 //Binance API
 /*
 const binance = require('node-binance-api')().options({
@@ -167,9 +167,9 @@ module.exports = {
 
 <p>업비트 API 노드js 스크립트</p>
 <img src = " https://postfiles.pstatic.net/MjAxODA5MjNfMTky/MDAxNTM3NjY5NzY1NjAw.2NTvM2OvrtfG99nEaTsNBRUaifHwoieXIelZp_cEsrIg.ZjBwlDMFiRTGEtkHLESF1Xxi8KAO1lU5R1jIOlTQar4g.PNG.nhj7/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2018-09-23_%EC%98%A4%EC%A0%84_11.29.03.png?type=w9
-66" width="130" height="100" alt="Upbit">
+66" width="30" height="30" alt="Upbit">
 
-<h1> JWT </H1>
+<h1> JWT값 </H1>
 <p> ${jwtToken} </p>
 
 

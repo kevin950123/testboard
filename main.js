@@ -18,7 +18,7 @@ var app = express();
 //API 모듈
 const request = require('request');
 const jwt = require("jsonwebtoken");
-const sign = require('jsonwebtoken').sign
+const sign = require('jsonwebtoken').sign;
 const uuidv4 = require("uuid/v4");
 const payload = {
 access_key: "VHLJxxxiVxhHQAfaCDxSZ9AaToDzHMS6aPB3kBla",
@@ -29,25 +29,18 @@ const authorizationToken = `Bearer ${jwtToken}`;
 const access_key = process.env.UPBIT_OPEN_API_ACCESS_KEY;
 const secret_key = process.env.UPBIT_OPEN_API_SECRET_KEY;
 const server_url = process.env.UPBIT_OPEN_API_SERVER_URL;
-
 const token = sign(payload, "AeYWR4VkeeD40DrkaVqWtdmJcgDoHvZeMF98CvJP")
 const options = {
     method: "GET",
     url: "https://api.upbit.com/v1/accounts",
     headers: {Authorization: `Bearer ${token}`},
 }
-
-
+/*
 const upbitall = request(options, (error, response, body) => {
     if (error) throw new Error(error)
     console.log(body)
 })
-
-
-
-
-
-
+*/
 var db = mysql.createConnection({
   host:'localhost',
   user:'root',
@@ -57,15 +50,15 @@ var db = mysql.createConnection({
 db.connect();
 /////////////////////////////////////////////////////////////////
 
-
-
 //여기까지 마음대로 수정가능
 
 //////////////////////////////////////////////////////////////////////
 var app = http.createServer(function(request,response){
+
     var _url = request.url;
     var queryData = url.parse(_url, true).query;
     var pathname = url.parse(_url, true).pathname;
+
     if(pathname === '/'){
       if(queryData.id === undefined){
         var title = `웹제목타이틀`;
@@ -166,10 +159,6 @@ var app = http.createServer(function(request,response){
       //여기부터
     } else if(pathname === '/bfolder'){
 
-
-
-
-
       var html = bfolder.HTML(`
         `);
         response.end(html);
@@ -185,16 +174,6 @@ var html = afolder.HTML(`
   var html = cfolder.HTML(`
     `);
     response.end(html);
-
-
-
-/*
-  } else if(pathname === '/apiup.js'){
-        var html = upbitapi.HTML(`
-          `);
-          response.end(html);
-*/
-
 
 } else if(pathname === '/afolder_process'){
 

@@ -1,81 +1,73 @@
-const jwt = require("jsonwebtoken");
-const uuidv4 = require("uuid/v4");
-const request = require('request');
-const sign = require('jsonwebtoken').sign
-const fs = require("fs");
-const http = require('http'); // 웹구현 모듈 // 파일 시스템 모듈
-const url = require('url'); // // 웹구현 모듈
-const qs = require('querystring');
-const path = require('path');
-const payload = {
-access_key: "VHLJxxxiVxhHQAfaCDxSZ9AaToDzHMS6aPB3kBla",
-nonce: uuidv4(),
-};
-const jwtToken = jwt.sign(payload, "AeYWR4VkeeD40DrkaVqWtdmJcgDoHvZeMF98CvJP");
-const authorizationToken = `Bearer ${jwtToken}`;
-const access_key = process.env.UPBIT_OPEN_API_ACCESS_KEY;
-const secret_key = process.env.UPBIT_OPEN_API_SECRET_KEY;
-const server_url = process.env.UPBIT_OPEN_API_SERVER_URL;
-const token = sign(payload, "AeYWR4VkeeD40DrkaVqWtdmJcgDoHvZeMF98CvJP")
-const options = {
-    method: "GET",
-    url: "https://api.upbit.com/v1/accounts",
-    headers: {Authorization: `Bearer ${token}`},
-}
-
-//url: server_url + "/v1/accounts",
+var http = require('http'); // 웹구현 모듈
+var fs = require('fs'); // 파일 시스템 모듈
+var url = require('url'); // // 웹구현 모듈
+var path = require('path');
+var Url = require('url-parse');
 
 
-/*
-let upbitall = request(options, (error, response, body) => {
-    if (error) throw new Error(error)
-    console.log(body)
-})
-const upbitallq = request(options, (error, response, body) => {
-    if (error) throw new Error(error)
-    console.log(body)
-})
+var text = fs.readFileSync('upbitall.js', 'utf8');
+console.log();
 
-request(options, (error, response, body) => {
-    if (error) throw new Error(error)
-    console.log(body)
-})
-*/
+module.exports = {
+  HTML:function(){
+    return `<!doctype html>
+    <html>
+    <head>
+      <title>WEB1 - </title>
+      <meta charset="utf-8">
 
+      <link rel="stylesheet" type=="text/css" href="style.css?ver=1">
+    </head>
+    <body>
+<link rel="stylesheet" type=="text/css" href="style.css?ver=1">
+    <style>
+    <link rel="stylesheet" type=="text/css" href="style.css?ver=1">
+    table {
+        width: 100%;
+      }
+      table, th, td {
+        border: 1px solid #bcbcbc;
+      }
+    html {
+      height: 150%;
+    }
+    body { margin: 0; }
+    .navbar {
+      background: black;
+      margin: 0; padding: 0;
+      list-style: none;
+      position: fixed;
+      width: 100%;
+    }
+    .navbar>li {
+      display: inline-block;
+    }
+    .navbar>li>a {
+      display: block;
+      text-decoration: none;
+      padding: 10px 20px;
+      color: white;
+    }
+    .navbar>li>a:hover {
+      background: gray;
+    }
+    </style>
 
-    module.exports = {
-      HTML:function(request, body){
-        return `
-        <!doctype html>
-        <html>
-        <meta charset="utf-8">
-        <head>
-        <meta charset="utf-8">
-          <title>WEB1 - API부르기</title>
+    <ul class="navbar">
+<a href="/" > <img src ="https://imgur.com/download/uEtxOPp/"> </a>
+      <li><a href="/">홈</a></li>
+      <li><a href="/afolder">메뉴A</a></li>
+      <li><a href="/bfolder">메뉴B</a></li>
+            <li><a href="/cfolder">API메뉴</a></li>
 
+    </ul>
 
-<script>
+<table>
 
-          request(options, (error, response, body) => {
-            if (error) throw new Error(error)
-            console.log(body);
-        })
-
-</script>
-
-<script src = "upbitapi/unit.js">
-</script>
-
-</head>
-
+</table>
+<table>
 <body>
 
-<p><br>
-
-
-
-
-
 <br>
 <br>
 <br>
@@ -83,55 +75,16 @@ request(options, (error, response, body) => {
 <br>
 <br>
 <br>
-
-
-나온값 :
-
-
-
-
-
-
-</p>
+<br>
+B폴더입니다.
 
 
 
 
 </body>
 </html>
+    `;
 
 
-           `;
-      }
     }
-
-
-/*
-  request(options, (error, response, body) => {
-      if (error) throw new Error(error)
-      console.log(body)
-  })
-*/
-
-
-/*
-  const jwt = require("jsonwebtoken");
-  const uuidv4 = require("uuid/v4");
-  const crypto = require('crypto');
-  const querystring = require("querystring");
-
-  const query = querystring.queryEncode({파라미터});
-
-  const hash = crypto.createHash('sha512');
-  const queryHash = hash.update(query, 'utf-8').digest('hex');
-
-  const payload = {
-    access_key: "VHLJxxxiVxhHQAfaCDxSZ9AaToDzHMS6aPB3kBla",
-    nonce: uuidv4(),
-    query_hash: queryHash,
-    query_hash_alg: 'SHA512',
-  };
-
-  const jwtToken = jwt.sign(payload, "AeYWR4VkeeD40DrkaVqWtdmJcgDoHvZeMF98CvJP");
-  const authorizationToken = `Bearer ${jwtToken}`;
-  */
+};
