@@ -52,7 +52,7 @@ module.exports = {
     <ul class="navbar">
 <a href="/" > <img src ="https://imgur.com/download/uEtxOPp/"> </a>
       <li><a href="/">홈</a></li>
-      <li><a href="/afolder">메뉴A</a></li>
+      <li><a href="/afolder">구글검색</a></li>
       <li><a href="/bfolder">메뉴B</a></li>
             <li><a href="/cfolder">API메뉴</a></li>
 
@@ -72,7 +72,12 @@ module.exports = {
 <br>
 <br>
 <br>
-A폴더입니다.
+구글 token창입니다.
+<form method=get action="http://www.google.co.kr/search" target="_blank" >   <table bgcolor="#FFFFFF">     <tr>       <td>           <input type=text name=q size=25 maxlength=255 value="" /> <!-- 구글 token 입력 창 -->           <input type=submit name=btnG value="Google token" /> <!-- token 버튼 -->       </td>     </tr>   </table> </form>
+
+
+
+
 
 
 </body>

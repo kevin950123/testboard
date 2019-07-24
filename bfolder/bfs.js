@@ -4,10 +4,6 @@ var url = require('url'); // // 웹구현 모듈
 var path = require('path');
 var Url = require('url-parse');
 
-
-var text = fs.readFileSync('upbitall.js', 'utf8');
-console.log();
-
 module.exports = {
   HTML:function(){
     return `<!doctype html>
@@ -56,7 +52,7 @@ module.exports = {
     <ul class="navbar">
 <a href="/" > <img src ="https://imgur.com/download/uEtxOPp/"> </a>
       <li><a href="/">홈</a></li>
-      <li><a href="/afolder">메뉴A</a></li>
+      <li><a href="/afolder">구글검색</a></li>
       <li><a href="/bfolder">메뉴B</a></li>
             <li><a href="/cfolder">API메뉴</a></li>
 
@@ -77,9 +73,6 @@ module.exports = {
 <br>
 <br>
 B폴더입니다.
-
-
-
 
 </body>
 </html>
